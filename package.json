@@ -1,0 +1,42 @@
+{
+  "name": "server-components",
+  "version": "1.0.0",
+  "description": "server-components",
+  "main": "main.js",
+  "scripts": {
+    "serve": "node main",
+    "build": "webpack -w --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhq823/server-components.git"
+  },
+  "keywords": [
+    "Vue",
+    "SSR",
+    "server-components"
+  ],
+  "author": "zhenghaiqiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhq823/server-components/issues"
+  },
+  "homepage": "https://github.com/zhq823/server-components#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "vue": "^2.6.12",
+    "vue-server-renderer": "^2.6.12",
+    "webpack": "^5.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack-cli": "^4.2.0"
+  }
+}
