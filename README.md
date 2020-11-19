@@ -1,0 +1,2 @@
+# server-components
+server components
