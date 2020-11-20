@@ -4,7 +4,7 @@
   "description": "server-components",
   "main": "main.js",
   "scripts": {
-    "serve": "node main",
+    "serve": "babel-node main",
     "build": "webpack -w --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,9 +34,12 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.1",
     "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^5.0.1",
+    "vue-loader": "^15.9.5",
     "webpack-cli": "^4.2.0"
   }
 }
