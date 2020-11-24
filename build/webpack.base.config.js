@@ -40,6 +40,10 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/
             },
             {
+                test: /\.(css|scss)$/,
+　　            loaders: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'url-loader',
                 options: {
