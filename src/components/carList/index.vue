@@ -1,5 +1,5 @@
 <template>
-    <div class="containerBox">
+    <div class="containerBox" style="border:1px solid red;">
         <div class="title">{{ title }}</div>
     </div>
 </template>
@@ -14,12 +14,3 @@ export default {
     }
 }
 </script>
-
-<style scoped lang='scss'>
-    .containerBox {
-        border: 1px solid red;
-        .title {
-            color: orange;
-        }
-    }
-</style>
