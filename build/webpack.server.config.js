@@ -20,7 +20,18 @@ module.exports = merge(baseConfig, {
         // 不要外置化 webpack 需要处理的依赖模块
         whitelist: /\.css$/
     }),
-
+    module: {
+        rules: [{
+            test: /\.(css|scss)$/,
+            use: [
+                'vue-style-loader',
+                {
+                    loader: 'css-loader'
+                },
+                'sass-loader'
+            ]
+        }]
+    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),

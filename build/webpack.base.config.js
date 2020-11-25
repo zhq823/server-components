@@ -39,10 +39,10 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /(node_modules|bower_components)/
             },
-            {
-                test: /\.(css|scss)$/,
-　　            loaders: ['style-loader', 'css-loader', 'sass-loader']
-            },
+//             {
+//                 test: /\.(css|scss)$/,
+// 　　            loaders: ['style-loader', 'css-loader', 'sass-loader']
+//             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'url-loader',
@@ -62,9 +62,9 @@ module.exports = {
             new VueLoaderPlugin(),
 
             new webpack.optimize.ModuleConcatenationPlugin(),
-            new ExtractTextPlugin({
-                filename: 'common.[chunkhash].css'
-            })
+            // new ExtractTextPlugin({
+            //     filename: 'common.[chunkhash].css'
+            // })
         ]
         : [
             new VueLoaderPlugin(),

@@ -40,9 +40,9 @@ if (isProd) {
     // tags for any async chunks used during render, avoiding waterfall requests.
     const clientManifest = require('./dist/vue-ssr-client-manifest.json')
     renderer = createRenderer(bundle, {
-        // template,
+        template,
         // 如果不是用模板template，那么设置inject: false,那么renderToString回调方法里html将会是demo string
-        inject: false,
+        // inject: false,
         clientManifest
     })
 } else {
