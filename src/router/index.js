@@ -8,7 +8,16 @@ export function createRouter() {
         mode: 'history',
         routes:[{
             path: '/',
-            component: () => import('../Home.vue')
+            component: () => import('@/views/Home.vue')
+        }, {
+            path: '/carList',
+            component: () => import('@/components/carList')
+        }, {
+            path: '/mealList',
+            component: () => import('@/components/mealList')
+        }, {
+            path: '/venueList',
+            component: () => import('@/components/venueList')
         }]
     })
 }
