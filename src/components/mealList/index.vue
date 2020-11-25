@@ -1,5 +1,5 @@
 <template>
-    <div @click="onBack()">
+    <div class="itemBox" @click="onBack()">
         《 {{ title }}
     </div>
 </template>
