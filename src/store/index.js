@@ -5,22 +5,26 @@ Vue.use(Vuex)
 
 import { fetchItem } from '../api'
 
-export function createStore () {
-    return new Vuex.Store({
-        state: {
-            items: {}
-        },
-        actions: {
-            fetchItem ({ commit }, id) {
-                return fetchItem(id).then(item => {
-                    commit('setItem', { id, item })
-                })
+export default class CreateStore {
+    
+    constructor() {
+        return new Vuex.Store({
+            state: {
+                items: {}
+            },
+            actions: {
+                fetchItem ({ commit }, id) {
+                    return fetchItem(id).then(item => {
+                        commit('setItem', { id, item })
+                    })
+                }
+            },
+            mutations: {
+                setItem (state, { id, item }) {
+                    Vue.set(state.items, id, item)
+                }
             }
-        },
-        mutations: {
-            setItem (state, { id, item }) {
-                Vue.set(state.items, id, item)
-            }
-        }
-    })
+        })
+    }
+
 }

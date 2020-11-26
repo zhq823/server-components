@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { createRouter } from './router'
-import { createStore } from './store'
+import CreateRouter from './router'
+import CreateStore from './store'
 import { sync } from 'vuex-router-sync'
 
 export default class CreateApp {
@@ -11,8 +11,8 @@ export default class CreateApp {
     }
 
     init() {
-        const router = createRouter()
-        const store = createStore()
+        const router = new CreateRouter()
+        const store = new CreateStore()
         sync(store, router)
 
         const app = new Vue({
