@@ -4,15 +4,25 @@ import { createRouter } from './router'
 import { createStore } from './store'
 import { sync } from 'vuex-router-sync'
 
-export function createApp() {
-    const router = createRouter()
-    const store = createStore()
-    sync(store, router)
+export default class CreateApp {
 
-    const app = new Vue({
-        router,
-        store,
-        render: h => h(App)
-    })
-    return { app, router, store }
+    constructor() {
+        this.init()
+    }
+
+    init() {
+        const router = createRouter()
+        const store = createStore()
+        sync(store, router)
+
+        const app = new Vue({
+            router,
+            store,
+            render: h => h(App)
+        })
+        this.app = app;
+        this.router = router;
+        this.store = store;
+    }
+
 }

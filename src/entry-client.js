@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { createApp } from './app.js'
+import CreateApp from './app.js'
 
 Vue.mixin({
     beforeRouteUpdate (to, from, next) {
@@ -15,7 +15,7 @@ Vue.mixin({
     }
 })
 
-const { app, router, store } = createApp()
+const { app, router, store } = new CreateApp()
 
 if (window.__INITIAL_STATE__) {
     store.replaceState(window.__INITIAL_STATE__)

@@ -1,11 +1,11 @@
-import { createApp } from './app.js'
+import CreateApp from './app.js'
 
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default context => {
     return new Promise((resolve, reject) => {
         const s = isDev && Date.now()
-        const { app, router, store } = createApp()
+        const { app, router, store } = new CreateApp()
 
         const { url } = context
         const { fullPath } = router.resolve(url).route
