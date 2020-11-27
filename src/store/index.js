@@ -1,27 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
 Vue.use(Vuex)
-
-import { fetchItem } from '../api'
+import Service from '@/service';
+const ajax = new Service()
 
 export default class CreateStore {
     
     constructor() {
         return new Vuex.Store({
             state: {
-                items: {}
+                dataList: []
             },
             actions: {
-                fetchItem ({ commit }, id) {
-                    return fetchItem(id).then(item => {
-                        commit('setItem', { id, item })
+                fetchDataList({ commit }, params) {
+                    return ajax.queryCacheData(params).then(response => {
+                        commit('SETDATALIST', response.content.map(e => e.cacheData))
                     })
                 }
             },
             mutations: {
-                setItem (state, { id, item }) {
-                    Vue.set(state.items, id, item)
+                SETDATALIST(state, value) {
+                    state.dataList = value;
                 }
             }
         })

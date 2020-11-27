@@ -12,6 +12,9 @@ export default class CreateRouter {
                 path: '/',
                 component: () => import('@/views/Home.vue')
             }, {
+                path: '/EventList',
+                component: () => import('@/views/EventList.vue')
+            }, {
                 path: '/carList',
                 component: () => import('@/components/carList')
             }, {

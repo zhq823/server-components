@@ -1,7 +1,7 @@
 <template>
     <section class="container">
         <template v-for="(item, index) in componentList">
-            <div class="itemBox" @click="onClick(item)" :key="index">
+            <div :data-props="JSON.stringify(item)" onclick="EMIT_SELECT(event)" class="itemBox" :key="index">
                 {{ item.label }}
             </div>
         </template>
@@ -34,14 +34,6 @@
                     },
                 ],
             };
-        },
-        methods: {
-            onClick(item) {
-                console.log(item);
-                this.$router.push({
-                    path: item.path,
-                });
-            }
         }
     }
 </script>
